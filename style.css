@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Press Start 2P", system-ui;
+}
+
+body{
+    background-color: #280a22;
+    z-index: -1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 84px;
+    color: #e8e4e7;
+    border-bottom:2px solid #e8e4e73d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 900;
+}
+
+main{
+    left: 0;
+    right: 0;
+    flex: 1 0;
+    /* background: yellow; */
+    margin: 0 15%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    height: 480px;
+    width: 360px;
+    background: lightcoral;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 16px;
+    margin-top: 28px;
+}
+
+.container .display{
+    /* background: lightgreen; */
+    height: 100px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .display .text{
+    background: lightcyan;
+    height: 64px;
+    width: 95%;
+    border-radius: 10px;
+}
+
+.container .keyboard{
+    /* background: red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 16px;
+}
+.container .key{
+    background: pink;
+    padding: 30px;
+    border-radius: 10px;
+}
