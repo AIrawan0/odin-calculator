@@ -60,6 +60,11 @@ main{
     height: 64px;
     width: 95%;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    justify-content: end;
+    text-align: end;
 }
 
 .container .keyboard{
@@ -72,6 +77,14 @@ main{
 }
 .container .key{
     background: pink;
-    padding: 30px;
+    padding: 24px;
     border-radius: 10px;
+}
+.container .submit{
+    margin: 10px 20px;
+    background: pink;
+    padding: 24px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
 }
