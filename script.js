@@ -19,7 +19,7 @@ function partition(arr){
   let num = '';
   for(let i=0;i<len;i++){
     const part = arr[i];
-    console.log(part);
+    // console.log(part);
     if(operator.includes(part)){
       partition.push(Number(num));
       partition.push(part);
@@ -35,7 +35,21 @@ function partition(arr){
 }
 
 function evaluate(arr){
-  console.log(partition(arr));
+  const parted = partition(arr);
+  console.log('partitioned : ' +parted);
+  let res = 0;
+  let opFound = 0;
+  for(let i=0;i<parted.length;i++){
+    if(operator.includes(parted[i])){
+      opFound += 1;
+      if(res===0)res+=parted[i-1];
+      res = operate(res,parted[i],parted[i+1]);
+    }
+  }
+  if(opFound<=0)res=parted[0];
+  console.log(res);
+  display.textContent = res;
+
 }
 
 // const num1 = 1;
