@@ -7,10 +7,10 @@ function operate(num1,op,num2){
     }
 }
 
-function readList(list){
+function handleDisplay(list){
   let str = '';
   for(num of list){str+=num;}
-  return str;
+  display.textContent = str;
 }
 
 function partition(arr){
@@ -48,33 +48,32 @@ function evaluate(arr){
   }
   if(opFound<=0)res=parted[0];
   console.log(res);
+  input = [res];
   display.textContent = res;
+  console.log('input after result :' + input)
 
 }
 
-// const num1 = 1;
-// const num2 = 2;
-// const operator = '+';
-// const res = operate(num1,operator,num2)
-// console.log(res);
+function handleSubmit(){
+  console.log("Input value : "+ input);
+  evaluate(input);
+}
 
-let input = [];
-const operator = ['+','-','*','/'];
-
-const button = document.querySelectorAll('.key');
-const submit = document.getElementById('submit');
-const display = document.getElementById('display');
-button.forEach((btn)=>{
-    btn.addEventListener("click",()=>{
+function handleNumkey(btn){
+  btn.addEventListener('click',()=>{
     if(btn.textContent === 'C')input = []
     // console.log("Pressed "+ btn.textContent)
     input.push(btn.textContent==='C'?0:btn.textContent);
-    let list = readList(input);
-    display.textContent = list;
-  })
-});
+    handleDisplay(input);
+  });
+}
 
-submit.addEventListener("click",()=>{
-  console.log("Input value : "+ input);
-  evaluate(input);
-})
+let input = [];
+const operator = ['+','-','*','/'];
+const button = document.querySelectorAll('.key');
+const submit = document.getElementById('submit');
+const display = document.getElementById('display');
+
+button.forEach(handleNumkey);
+
+submit.addEventListener("click",handleSubmit);
